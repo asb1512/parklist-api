@@ -78,3 +78,19 @@ national_parks = [
   {name: 'Zion', location: 'Utah', image: 'https://upload.wikimedia.org/wikipedia/commons/9/9e/Angels_Landing.jpg'}
 ]
 
+national_parks.each do |park|
+  new_park = Park.new(name: park[:name], location: park[:location], image: park[:image])
+  new_park.save
+end
+
+# Creation of several users
+users = [
+  {email: 'test@gmail.com', username: 'test-user-1', password: 'test1', bio: 'I am a digital nomad.'},
+  {email: 'test@aol.com', username: 'test-user-2', password: 'test2', bio: 'I am geologist who loves nature.'},
+  {email: 'test@yahoo.com', username: 'test-user-3', password: 'test3', bio: 'Trying to check each park off my bucket list.'}
+]
+
+user.each do |user|
+  new_user = User.new(email: user[:email], username: [:username], password: user[:password], bio: user[:bio])
+  new_user.save
+end
