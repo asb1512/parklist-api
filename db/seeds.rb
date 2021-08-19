@@ -10,6 +10,7 @@
 # User.delete_all
 # Unsure if all users should be deleted with each seed of the DB
 Park.delete_all
+User.delete_all
 
 # Creation of National Parks
 national_parks = [
