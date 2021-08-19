@@ -90,7 +90,7 @@ users = [
   {email: 'test@yahoo.com', username: 'test-user-3', password: 'test3', bio: 'Trying to check each park off my bucket list.'}
 ]
 
-user.each do |user|
+users.each do |user|
   new_user = User.new(email: user[:email], username: [:username], password: user[:password], bio: user[:bio])
   new_user.save
 end
