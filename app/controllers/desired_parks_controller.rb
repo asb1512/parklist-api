@@ -12,7 +12,7 @@ class DesiredParksController < ApplicationController
   end
 
   def destroy
-    dp = DesiredPark.find_by(id: desired_params[:visited_id])
+    dp = DesiredPark.find_by(id: desired_params[:desired_id])
     user = User.find_by(id: desired_params[:user_id])
     if dp && user
       dp.destroy
