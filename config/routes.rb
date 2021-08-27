@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get '/parks', to: 'parks#index'
   post '/users', to: 'users#create'
   post '/desired-parks', to: 'desired_parks#create'
+  delete '/desired-parks', to: 'desired_parks#destroy'
   post '/visited-parks', to: 'visited_parks#create'
+  delete '/visited-parks', to: 'visited_parks#destroy'
 end
