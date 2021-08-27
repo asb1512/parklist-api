@@ -11,9 +11,20 @@ class DesiredParksController < ApplicationController
     end
   end
 
+  def destroy
+    dp = DesiredPark.find_by(id: desired_params[:visited_id])
+    user = User.find_by(id: desired_params[:user_id])
+    if dp && user
+      dp.destroy
+      render json: user, status: 200, message: "List item successfully deleted"
+    else
+      render status: 404, message: "List item not found"
+    end
+  end
+
   private
 
   def desired_params
-    params.require(:info).permit(:desired, :user_id, :park_id)
+    params.require(:info).permit(:desired, :desired_id, :user_id, :park_id)
   end
 end
