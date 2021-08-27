@@ -86,12 +86,13 @@ end
 
 # Creation of several users
 users = [
-  {email: 'test@gmail.com', bio: 'I am a digital nomad.'},
-  {email: 'test@aol.com', bio: 'I am geologist who loves nature.'},
-  {email: 'test@yahoo.com', bio: 'Trying to check each park off my bucket list.'}
+  {email: 'test@gmail.com', bio: 'I am a digital nomad.', admin: false},
+  {email: 'test@aol.com', bio: 'I am geologist who loves nature.', admin: false},
+  {email: 'test@yahoo.com', bio: 'Trying to check each park off my bucket list.', admin: false},
+  {email: 'andrew@gmail.com', bio: 'Park List overlord', admin: true}
 ]
 
 users.each do |user|
-  new_user = User.new(email: user[:email], bio: user[:bio])
+  new_user = User.new(email: user[:email], bio: user[:bio], admin: user[:admin])
   new_user.save
 end
