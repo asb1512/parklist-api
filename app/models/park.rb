@@ -1,3 +1,6 @@
 class Park < ActiveRecord::Base
-  has_and_belongs_to_many :users
+  has_many :desired_parks
+  has_many :visited_parks
+  has_many :users, through: :desired_parks
+  has_many :users, through: :visited_parks
 end
